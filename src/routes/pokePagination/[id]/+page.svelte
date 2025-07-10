@@ -7,6 +7,12 @@
     let pagination = 0;
     $: id = parseInt($page.params.id) || 0;
     $: pagination = id * 39;
+    let ant_setas = "<--"
+    let next_setas = "-->"
+
+    function next_page() {
+        window.location.href = `/pokePagination/${id + 1}`;
+    }
 
   onMount(async () => {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=40&offset=${pagination}`);
@@ -89,6 +95,14 @@
             </div>
         </div>
     {/each}
+
+    
+</div>
+<div class="pagination">
+    {#if id > 0}
+        <button class="ant-page">{ant_setas}</button>
+    {/if}
+        <button class="next-page" on:click={next_page()}>{next_setas}</button>
 </div>
 
 <style>
@@ -96,6 +110,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        margin-top: 3rem;
         padding: 0 5rem 0 5rem;
         gap: 2rem;
     }
@@ -137,4 +152,30 @@
         border: 1px solid black;
         margin-top: 0.1rem;
     }
+    .pagination {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.pagination button {
+  background: #e5e7eb;
+  color: #111827;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 9999px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.pagination button:hover {
+  background: #2563eb;
+  color: white;
+  transform: translateY(-1px);
+}
+
 </style>
