@@ -1,73 +1,92 @@
 <main>
-    <h1>Wellcome to my pokedex</h1>
-    <hr>
+  <h1>Bem-vindo à Pokédex</h1>
+  <p class="subtitle">Explore, compare e descubra o mundo Pokémon</p>
+  <hr />
 
-    <div class="action-container">
-        <div class="action">
-            <div class="action-choice">
-            <a href="/pokePagination/0">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Ver todos os pokemons" />
-                <p class="desc">Explore todos os Pokémons e descubra suas características únicas.</p>
-                <p class="tittle-choice">See all Pokémons</p>
-            </a>
-            </div>
+  <div class="action-container">
+    <div class="action">
+      <a href="/pokePagination/0" class="action-choice">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Ver todos os pokemons" />
+        <p class="desc">Explore todos os Pokémons e descubra suas características únicas.</p>
+        <p class="title-choice">Ver todos os Pokémons</p>
+      </a>
 
-            <div class="action-choice">
-                <img src="https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-picture-coming-creative-vector-png-image_40968940.jpg" alt="Ver todos os pokemons">
-                <p>Comparar pokemons</p>
-            </div>
-
-            <div class="action-choice">
-                <img src="https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-picture-coming-creative-vector-png-image_40968940.jpg" alt="Ver todos os pokemons">
-                <p>See all pokemons</p>
-            </div>
-
-            <div class="action-choice">
-                <img src="https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-picture-coming-creative-vector-png-image_40968940.jpg" alt="Ver todos os pokemons">
-                <p>See all pokemons</p>
-            </div>
-        </div>
+      <a href="/compare" class="action-choice">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" alt="Comparar Pokémons" />
+        <p class="desc">Compare dois Pokémons e veja quem se destaca em cada atributo.</p>
+        <p class="title-choice">Comparar Pokémons</p>
+      </a>
     </div>
+  </div>
 </main>
 
 <style>
   main {
-    padding: 2rem 4rem;
+    padding: 4rem 2rem;
     font-family: 'Segoe UI', sans-serif;
     text-align: center;
+    background: linear-gradient(to bottom, #e0f0ff, #ffffff);
+    min-height: 100vh;
   }
+
   h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 3rem;
+    margin-bottom: 0.2rem;
+    color: #3b4cca;
   }
+
+  .subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+
+  hr {
+    width: 60px;
+    border: 2px solid #3b4cca;
+    margin: 1rem auto 2rem auto;
+    border-radius: 2px;
+  }
+
   .action {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
   }
+
   .action-choice {
-    width: 16rem;
-    background: #f9f9f9;
-    border-radius: 1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    transition: transform 0.2s ease-in-out;
+    width: 18rem;
+    background: white;
+    border-radius: 1.25rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: transform 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
   .action-choice:hover {
-    transform: scale(1.05);
+    transform: translateY(-6px);
   }
+
   .action-choice img {
-    width: 8rem;
-    height: 8rem;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
   }
+
   .desc {
-    font-size: 0.9rem;
-    margin: 1rem 0;
-    color: #333;
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 0.75rem;
   }
-  .tittle-choice {
+
+  .title-choice {
     font-weight: bold;
-    color: #0070f3;
+    font-size: 1.1rem;
+    color: #3b4cca;
   }
 </style>
