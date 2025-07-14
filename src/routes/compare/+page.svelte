@@ -98,76 +98,113 @@
 
 <style>
 	.container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		min-height: 100vh;
-		background: linear-gradient(to bottom, #e0f0ff, #ffffff);
-		font-family: 'Segoe UI', sans-serif;
-	}
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2rem;
+	min-height: 100vh;
+	background: linear-gradient(to bottom, #e0f0ff, #ffffff);
+	font-family: 'Segoe UI', sans-serif;
+	text-align: center;
+	box-sizing: border-box;
+}
 
-	.versus-box {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 5rem;
-		margin-top: 2rem;
-	}
+.versus-box {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 2rem;
+	margin-top: 2rem;
+	width: 100%;
+}
 
-	.card {
-		background: white;
-		border-radius: 1rem;
-		padding: 2rem;
-		box-shadow: 0 0 20px rgba(0,0,0,0.1);
-		width: 280px;
-		text-align: center;
-		transition: transform 0.3s ease;
-	}
+.card {
+	background: #fff;
+	border-radius: 1rem;
+	padding: 1.5rem;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 300px;
+	transition: transform 0.3s ease;
+}
 
-	.card:hover {
-		transform: scale(1.03);
-	}
+.card:hover {
+	transform: translateY(-5px);
+}
 
-	.card img {
-		width: 120px;
-		height: 120px;
-		margin-bottom: 1rem;
-	}
+.card img {
+	width: 120px;
+	height: 120px;
+	object-fit: contain;
+	margin-bottom: 1rem;
+	filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
 
+.card h3 {
+	font-size: 1.25rem;
+	color: #1e3a8a;
+	margin-bottom: 0.5rem;
+}
+
+.card p {
+	margin: 0.25rem 0;
+	font-weight: 500;
+	color: #1f2937;
+}
+
+.vs {
+	font-size: 2rem;
+	font-weight: bold;
+	color: #2563eb;
+	align-self: center;
+}
+
+canvas {
+	max-width: 100%;
+	margin: 2rem 0;
+	background: #fff;
+	border-radius: 1rem;
+	padding: 1rem;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+	font-size: 1.2rem;
+	color: #1e40af;
+	margin-top: 1rem;
+}
+
+input {
+	padding: 0.6rem;
+	width: 100%;
+	border-radius: 0.5rem;
+	border: 1px solid #cbd5e1;
+	margin-bottom: 1rem;
+	font-size: 1rem;
+	box-sizing: border-box;
+}
+
+button {
+	padding: 0.6rem 1.2rem;
+	border-radius: 0.5rem;
+	border: none;
+	background: #2563eb;
+	color: white;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+
+button:hover {
+	background: #1e3a8a;
+}
+
+@media (max-width: 640px) {
 	.vs {
-		font-size: 3rem;
-		font-weight: bold;
-		color: #333;
+		display: none;
 	}
+}
 
-	canvas {
-		max-width: 600px;
-		margin: 2rem 0;
-	}
-
-	h2 {
-		margin-top: 2rem;
-		font-size: 1.5rem;
-		color: #333;
-	}
-
-	input {
-		padding: 0.5rem;
-		width: 100%;
-		border-radius: 6px;
-		border: 1px solid #ccc;
-		margin-bottom: 1rem;
-	}
-
-	button {
-		padding: 0.5rem 1rem;
-		border-radius: 6px;
-		border: none;
-		background: #007bff;
-		color: white;
-		cursor: pointer;
-	}
 </style>
 
 <div class="container">

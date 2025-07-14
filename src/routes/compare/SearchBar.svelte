@@ -28,35 +28,52 @@
 </script>
 
 <style>
-	.search-bar {
-		position: relative;
-		width: 100%;
-	}
+.search-bar {
+	position: relative;
+	width: 100%;
+}
 
-	.search-input {
-		width: 100%;
-		padding: 0.5rem;
-		border-radius: 6px;
-		border: 1px solid #ccc;
-	}
+.search-input {
+	width: 90%;
+	padding: 0.6rem 1rem;
+	border-radius: 8px;
+	border: 1px solid #cbd5e1;
+	font-size: 1rem;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	transition: border 0.2s ease;
+}
 
-	.search-dropdown {
-		position: absolute;
-		top: 110%;
-		width: 100%;
-		background: white;
-		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-		z-index: 1000;
-	}
+.search-input:focus {
+	outline: none;
+	border-color: #3b82f6;
+	box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
 
-	.search-dropdown li {
-		padding: 0.5rem 1rem;
-		cursor: pointer;
-	}
+.search-dropdown {
+	position: absolute;
+	top: 110%;
+	width: 100%;
+	background: white;
+	border-radius: 0.75rem;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	z-index: 1000;
+	padding: 0.3rem 0;
+}
 
-	.search-dropdown li:hover {
-		background: #eee;
-	}
+.search-dropdown li {
+	padding: 0.75rem 1rem;
+	cursor: pointer;
+	transition: background 0.2s, color 0.2s;
+	font-weight: 500;
+	color: #1e293b;
+}
+
+.search-dropdown li:hover {
+	background: #e0f2fe;
+	color: #1d4ed8;
+}
+
 </style>
 
 <div class="search-bar">
